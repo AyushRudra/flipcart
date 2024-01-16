@@ -30,9 +30,9 @@ export const CartItem = ({ item }) => {
     const selectedItem = cart.find(cartItem => cartItem.id === item.id);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        localStorage.setItem('cart', JSON.stringify(cart));
-    }, [cart]);
+    // useEffect(() => {
+    //     localStorage.setItem('cart', JSON.stringify(cart));
+    // }, [cart]);
 
     const removeItem = (id) => {
         dispatch(deleteFromCart(id));

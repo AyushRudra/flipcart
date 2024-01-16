@@ -111,12 +111,6 @@ export const Checkout = () => {
         setAmount(newSum - newDiscount);
     }, [checkoutIteams]);
 
-    
-    // if(!localStorage.getItem("userName")){
-    //     navigator("/login")
-    //     return;
-    // }
-
 
     const [expanded, setExpanded] = useState(false);
       
@@ -135,9 +129,6 @@ export const Checkout = () => {
        
 
       const userName = localStorage.getItem("userName");
-      const date = new Date();
-      const [quantity, setQuantity] = useState(1);
-      
       const [product, setPoduct] = useState();
   
       //    fetching data from backend-----
@@ -188,11 +179,8 @@ export const Checkout = () => {
                    "content-type": "application/json",
                }
            }
-
            const orderData = {
-               username: userName,
-               product: product,
-
+               quantity: amount,
            }
 
            const { data: { key } } = await axios.get("http://localhost:8080/getKey");
